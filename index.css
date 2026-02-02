@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* New Sathiya Furniture Design System
+   All colors are in HSL format for Tailwind compatibility
+*/
+
+@layer base {
+  :root {
+    /* New Sathiya Furniture Brand Colors - Green & Yellow Theme */
+    --background: 60 10% 98%;
+    --foreground: 142 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 142 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 142 30% 10%;
+
+    /* Primary - Forest Green */
+    --primary: 142 55% 32%;
+    --primary-foreground: 60 20% 98%;
+
+    /* Secondary - Light Green Tint */
+    --secondary: 140 25% 94%;
+    --secondary-foreground: 142 30% 10%;
+
+    /* Muted - Soft Gray-Green */
+    --muted: 140 8% 90%;
+    --muted-foreground: 142 10% 40%;
+
+    /* Accent - Golden Yellow */
+    --accent: 45 95% 50%;
+    --accent-foreground: 142 30% 10%;
+
+    /* Destructive */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success - Green */
+    --success: 142 60% 38%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning - Amber/Gold */
+    --warning: 45 95% 52%;
+    --warning-foreground: 142 30% 10%;
+
+    /* Premium - Deep Forest Green for highlights */
+    --premium: 142 50% 25%;
+    --premium-foreground: 60 20% 98%;
+
+    /* Border, Input, Ring */
+    --border: 140 10% 82%;
+    --input: 140 10% 82%;
+    --ring: 142 55% 32%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar (Admin) - Deep Green */
+    --sidebar-background: 142 50% 12%;
+    --sidebar-foreground: 60 20% 96%;
+    --sidebar-primary: 45 95% 50%;
+    --sidebar-primary-foreground: 142 30% 10%;
+    --sidebar-accent: 142 40% 18%;
+    --sidebar-accent-foreground: 60 20% 96%;
+    --sidebar-border: 142 30% 20%;
+    --sidebar-ring: 45 95% 50%;
+
+    /* Chart Colors - Green & Yellow Theme */
+    --chart-1: 142 55% 35%;
+    --chart-2: 45 95% 50%;
+    --chart-3: 142 45% 45%;
+    --chart-4: 50 90% 55%;
+    --chart-5: 38 95% 52%;
+  }
+
+  .dark {
+    --background: 142 15% 6%;
+    --foreground: 60 10% 96%;
+
+    --card: 142 15% 10%;
+    --card-foreground: 60 10% 96%;
+
+    --popover: 142 15% 10%;
+    --popover-foreground: 60 10% 96%;
+
+    --primary: 142 50% 45%;
+    --primary-foreground: 142 15% 6%;
+
+    --secondary: 142 15% 16%;
+    --secondary-foreground: 60 10% 96%;
+
+    --muted: 142 12% 15%;
+    --muted-foreground: 60 5% 58%;
+
+    --accent: 48 90% 55%;
+    --accent-foreground: 142 30% 10%;
+
+    --destructive: 0 65% 52%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 55% 42%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 48 92% 52%;
+    --warning-foreground: 142 15% 10%;
+
+    --premium: 142 45% 40%;
+    --premium-foreground: 60 10% 98%;
+
+    --border: 142 12% 20%;
+    --input: 142 12% 20%;
+    --ring: 142 50% 45%;
+
+    --sidebar-background: 142 40% 8%;
+    --sidebar-foreground: 60 10% 96%;
+    --sidebar-primary: 48 90% 55%;
+    --sidebar-primary-foreground: 142 30% 10%;
+    --sidebar-accent: 142 28% 14%;
+    --sidebar-accent-foreground: 60 10% 96%;
+    --sidebar-border: 142 22% 16%;
+    --sidebar-ring: 48 90% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Container */
+  .container-deiva {
+    @apply w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  /* Button Styles */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 
+           transition-all duration-300 font-medium;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 
+           transition-all duration-300 font-medium;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary bg-transparent
+           hover:bg-primary hover:text-primary-foreground
+           transition-all duration-300 font-medium;
+  }
+
+  /* Card Hover Effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Product Card */
+  .product-card {
+    @apply bg-card rounded-xl overflow-hidden card-hover border border-border/50;
+  }
+
+  /* Section Spacing */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  /* Text Gradient */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  /* Overlay */
+  .overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent;
+  }
+
+  /* WhatsApp Button */
+  .whatsapp-btn {
+    @apply inline-flex items-center gap-2 bg-[#25D366] text-white 
+           px-6 py-3 rounded-full font-medium hover:bg-[#128C7E] 
+           transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+
+  /* Badge */
+  .badge-sale {
+    @apply bg-accent text-accent-foreground text-xs font-semibold 
+           px-2 py-1 rounded-full uppercase tracking-wide;
+  }
+
+  .badge-new {
+    @apply bg-primary text-primary-foreground text-xs font-semibold 
+           px-2 py-1 rounded-full uppercase tracking-wide;
+  }
+
+  /* Form Styles */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-lg border border-border bg-background
+           focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary
+           transition-all duration-200;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-foreground mb-2;
+  }
+
+  /* Loading Spinner */
+  .spinner {
+    @apply animate-spin rounded-full border-2 border-muted border-t-primary;
+  }
+
+  /* Order Status Badge */
+  .status-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .status-pending {
+    @apply bg-warning/10 text-warning;
+  }
+
+  .status-confirmed {
+    @apply bg-success/10 text-success;
+  }
+
+  .status-processing {
+    @apply bg-primary/10 text-primary;
+  }
+
+  .status-shipped {
+    @apply bg-chart-5/10 text-chart-5;
+  }
+
+  .status-delivered {
+    @apply bg-success/10 text-success;
+  }
+
+  .status-cancelled {
+    @apply bg-destructive/10 text-destructive;
+  }
+}
+
+@layer utilities {
+  /* Animation Delays */
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* Hide scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Aspect Ratios */
+  .aspect-product {
+    aspect-ratio: 3/4;
+  }
+
+  .aspect-hero {
+    aspect-ratio: 16/9;
+  }
+
+  /* Line Clamp */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
